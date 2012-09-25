@@ -1,0 +1,7 @@
+{
+    "name": "heyday/silverstripe-hashpath",
+    "type": "silverstripe-module",
+    "require": {
+        "composer/installers": "1.0.0"
+    }
+}
