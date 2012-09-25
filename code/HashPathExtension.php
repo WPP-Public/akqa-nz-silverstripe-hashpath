@@ -1,6 +1,6 @@
 <?php
 
-class HashPath extends Extension
+class HashPathExtension extends Extension
 {
 
     public function HashPath($path, $theme = true)
