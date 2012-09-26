@@ -6,6 +6,7 @@ class HashPathExtension extends Extension
     public function HashFile($path, $theme = true)
     {
         $path = $theme ? $this->getPath($path) : $path;
+
         return file_exists($path) ? md5_file($path) : '';
     }
 
@@ -14,6 +15,7 @@ class HashPathExtension extends Extension
         $filepath = $this->getPath($path);
         $hash = $this->HashFile($filepath, false);
         $path_parts = pathinfo($filepath);
+
         return str_replace(BASE_PATH, '', $path_parts['dirname']) . '/' . basename($path, ".{$path_parts['extension']}") . ".v.$hash.{$path_parts['extension']}";
     }
 
@@ -21,5 +23,5 @@ class HashPathExtension extends Extension
     {
         return BASE_PATH . ($theme ? '/themes/' . SSViewer::current_theme() . "/$path" : $path);
     }
-    
+
 }

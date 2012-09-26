@@ -47,13 +47,13 @@ The following is required in your root `.htaccess` file.
 
 ##How to use
 
-Provided when your template runs the correct theme is set, you can simply pass in the path path relative to the theme root.
+Provided when your template runs the correct theme is set, you can simply pass in the asset path relative to the theme root.
 
-If the file is located at `themes/my-theme/js/general.js` and the `my-theme` theme is current:
+For example, if the file is located at `themes/my-theme/js/general.js` and the `my-theme` theme is current, using:
 
     <script src="{$HashPath(js/general.js)}"></script>
 
-This will result in:
+will result in:
 
     <script src="/themes/my-theme/js/general.v.54473acf909c645bb14f011d86a47733.js"></script>
 
