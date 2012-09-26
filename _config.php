@@ -1,3 +1,3 @@
 <?php
 
-Object::add_extension('ViewableData', 'HashPathExtension');
+Object::add_extension('ContentController', 'HashPathExtension');
