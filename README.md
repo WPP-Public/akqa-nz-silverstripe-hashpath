@@ -43,7 +43,7 @@ The following is required in your root `.htaccess` file.
 
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.+)\.(v\.[\w]+)\.(js|css|png|jpg|gif)$ $1.$3 [L]
+    RewriteRule ^(.+)\.(v[\w]+)\.(js|css|png|jpg|gif)$ $1.$3 [L]
 </IfModule>
 ```
 
@@ -59,7 +59,7 @@ For example, for a file located at `themes/my-theme/js/general.js` and with `my-
 
 will result in:
 
-    <script src="/themes/my-theme/js/general.v.54473acf909c645bb14f011d86a47733.js"></script>
+    <script src="/themes/my-theme/js/general.v54473acf909c645bb14f011d86a47733.js"></script>
 
 If you are wanting to use an asset that is not relative to the current theme, use:
 
