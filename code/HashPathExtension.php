@@ -36,7 +36,7 @@ class HashPathExtension extends Extension
      */
     public function HashPath($path, $theme = true)
     {
-        $filepath = $this->getPath($path);
+        $filepath = $this->getPath($path, $theme);
         $hash = $this->HashFile($filepath, false);
         $path_parts = pathinfo($filepath);
 
