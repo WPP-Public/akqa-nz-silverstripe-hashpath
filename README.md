@@ -67,6 +67,20 @@ If you are wanting to use an asset that is not relative to the current theme, us
 
 ##Unit Testing
 
+If you have `phpunit` installed you can run `silverstripe-hashpath`'s unit tests to see if everything is functioning correctly.
+
+###Running the unit tests
+
+From the command line:
+    
+    ./sake dev/tests/module/silverstripe-hashpath
+
+
+From your browser:
+
+    http://localhost/dev/tests/module/silverstripe-hashpath
+
+
 ##Contributing
 
 ###Code guidelines
