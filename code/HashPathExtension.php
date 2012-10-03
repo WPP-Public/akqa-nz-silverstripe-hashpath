@@ -37,14 +37,13 @@ class HashPathExtension extends Extension
     public function HashPath($path, $theme = true)
     {
         $filepath = $this->getPath($path, $theme);
-        $hash = $this->HashFile($filepath, false);
         $path_parts = pathinfo($filepath);
 
         return sprintf(
             self::$format,
             str_replace(BASE_PATH, '', $path_parts['dirname']),
             basename($path, ".{$path_parts['extension']}"),
-            $hash,
+            $this->HashFile($filepath, false),
             $path_parts['extension']
         );
     }
