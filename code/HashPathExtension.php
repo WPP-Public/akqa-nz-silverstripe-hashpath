@@ -8,6 +8,14 @@ class HashPathExtension extends Extension
      */
     protected static $format = '%s/%s.v.%s.%s';
     /**
+     * Set the format for use in producing the web path
+     * @param string $format The format to set
+     */
+    public static function setFormat($format)
+    {
+        self::$format = $format;
+    }
+    /**
      * Returns an md5 hash of a file
      * @param  string  $path  Relative or absolute path to file
      * @param  boolean $theme Whether or not to take current theme into account
