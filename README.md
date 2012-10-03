@@ -1,6 +1,6 @@
 #Heyday Hash Path
 
-Hash path allows you to produce a file path in SilverStripe which includes a hash of the file, enabling you to use the hash to bust the browser cache
+Hash path provides a function in SilverStripe templates which given a path to an asset returns a path including a hash of the asset, enabling you in combination with some .htaccess to easily mitigate issues with browser caching.
 
 ##License
 
@@ -24,7 +24,7 @@ Create or edit a `composer.json` file in the root of your SilverStripe project, 
     ],
     "require": {
         "composer/installers": "1.0.0",
-        "heyday/silverstripe-hashpath": "dev-master"
+        "heyday/silverstripe-hashpath": "1.0.*"
     }
 }
 ```
@@ -47,19 +47,23 @@ The following is required in your root `.htaccess` file.
 </IfModule>
 ```
 
+Please note that if you change the format of the path that `hash path` outputs, you will need to change the `RewriteRule`. 
+
 ##How to use
 
-Provided when your template runs the correct theme is set, you can simply pass in the asset path relative to the theme root.
+Provided the correct theme is set, you can simply call `$HashPath` with the asset location relative to the current theme as the first argument.
 
-For example, if the file is located at `themes/my-theme/js/general.js` and the `my-theme` theme is current, using:
+For example, for a file located at `themes/my-theme/js/general.js` and with `my-theme`  current, using:
 
-    <script src="{$HashPath(js/general.js)}"></script>
+    <script src="$HashPath(js/general.js)"></script>
 
 will result in:
 
     <script src="/themes/my-theme/js/general.v.54473acf909c645bb14f011d86a47733.js"></script>
 
+If you are wanting to use an asset that is not relative to the current theme, use:
 
+    <script src="$HashPath(/my-module/js/general.js, 0)"></script>
 
 ##Unit Testing
 
