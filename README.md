@@ -1,5 +1,7 @@
 #Heyday Hash Path
 
+Hash path allows you to produce a file path in SilverStripe which includes a hash of the file, enabling you to use the hash to bust the browser cache
+
 ##License
 
 Hash Path is licensed under an [MIT license](http://heyday.mit-license.org/)
