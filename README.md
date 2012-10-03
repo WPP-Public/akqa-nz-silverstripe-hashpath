@@ -29,7 +29,7 @@ Create or edit a `composer.json` file in the root of your SilverStripe project, 
 }
 ```
 
-After completing this step, navigate in Terminal or similar to the SilverStrippe root directory and run `composer install` or `composer update` depending on whether or not you have composer already in use.
+After completing this step, navigate in Terminal or similar to the SilverStripe root directory and run `composer install` or `composer update` depending on whether or not you have composer already in use.
 
 ###.htaccess
 
@@ -53,7 +53,7 @@ Please note that if you change the format of the path that `hash path` outputs, 
 
 Provided the correct theme is set, you can simply call `$HashPath` with the asset location relative to the current theme as the first argument.
 
-For example, for a file located at `themes/my-theme/js/general.js` and with `my-theme`  current, using:
+For example, for a file located at `themes/my-theme/js/general.js` and with `my-theme` current, using:
 
     <script src="$HashPath(js/general.js)"></script>
 
