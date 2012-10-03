@@ -6,7 +6,7 @@ class HashPathExtension extends Extension
      * The format of the web path
      * @var string
      */
-    protected static $format = '%s/%s.v.%s.%s';
+    protected static $format = '%s/%s.v%s.%s';
     /**
      * Set the format for use in producing the web path
      * @param string $format The format to set
