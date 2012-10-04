@@ -16,14 +16,7 @@ Create or edit a `composer.json` file in the root of your SilverStripe project, 
 
 ```json
 {
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "http://packages.heyday.net.nz/"
-        }
-    ],
     "require": {
-        "composer/installers": "1.0.0",
         "heyday/silverstripe-hashpath": "1.0.*"
     }
 }
