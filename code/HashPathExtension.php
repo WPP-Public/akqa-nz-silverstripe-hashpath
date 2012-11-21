@@ -8,12 +8,25 @@ class HashPathExtension extends Extension
      */
     protected static $format = '%s/%s.v%s.%s';
     /**
+     * Whether or not to output links as relative
+     * @var boolean
+     */
+    protected static $relativeLinks = false;
+    /**
      * Set the format for use in producing the web path
      * @param string $format The format to set
      */
     public static function setFormat($format)
     {
         self::$format = $format;
+    }
+    /**
+     * Output links as relative
+     * @param boolen $val Whether or not to output links as relative
+     */
+    public static function setRelativeLinks($val = true)
+    {
+        self::$relativeLinks = $val;
     }
     /**
      * Returns an md5 hash of a file
@@ -41,7 +54,7 @@ class HashPathExtension extends Extension
 
         return sprintf(
             self::$format,
-            str_replace(BASE_PATH, '', $path_parts['dirname']),
+            str_replace(BASE_PATH . (self::$relativeLinks ? '/' : ''), '', $path_parts['dirname']),
             basename($path, ".{$path_parts['extension']}"),
             $this->HashFile($filepath, false),
             $path_parts['extension']
