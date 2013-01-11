@@ -1,6 +1,9 @@
 <?php
-// Temporary direct include while a better solution is investigated.
-require_once '../../_config.php';
+// Temporary fix to work around include issue while a better solution is investigated.
+if (!defined('HASH_PATH_RELATIVE_PATH')) {
+    define('HASH_PATH_RELATIVE_PATH', basename(dirname(__FILE__)));
+}
+
 
 class HashPathExtensionTest extends PHPUnit_Framework_TestCase
 {
