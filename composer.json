@@ -27,8 +27,7 @@
         "composer/composer": "1.0.0-alpha6",
         "phpmd/phpmd": "1.4.*",
         "phploc/phploc": "dev-master",
-        "pdepend/pdepend": "1.1.*",
-//        "sami/sami": "dev-master"
+        "pdepend/pdepend": "1.1.*"
     },
     "minimum-stability": "dev"
 }
