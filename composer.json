@@ -28,7 +28,7 @@
         "phpmd/phpmd": "1.4.*",
         "phploc/phploc": "dev-master",
         "pdepend/pdepend": "1.1.*",
-        "sami/sami": "dev-master"
+//        "sami/sami": "dev-master"
     },
     "minimum-stability": "dev"
 }
