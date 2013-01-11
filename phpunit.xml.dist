@@ -9,7 +9,7 @@
          processIsolation="false"
          stopOnFailure="false"
          syntaxCheck="false"
-         bootstrap="tests/bootstrap.php"
+         bootstrap="code/tests/bootstrap.php"
 >
     <testsuites>
         <testsuite name="Hashpath Test Suite">
