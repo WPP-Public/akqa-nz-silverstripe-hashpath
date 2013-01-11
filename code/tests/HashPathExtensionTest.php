@@ -1,6 +1,6 @@
 <?php
 // Temporary direct include while a better solution is investigated.
-require_once '../_config.php';
+require_once '../../_config.php';
 
 class HashPathExtensionTest extends PHPUnit_Framework_TestCase
 {
