@@ -117,7 +117,7 @@
  <target name="phpunit" description="Run unit tests with PHPUnit">
   <exec executable="phpunit" failonerror="true">
    <arg value="HashPathExtensionTest" />
-   <arg value="HashPathExtensionTest.php" />
+   <arg value="code/tests/HashPathExtensionTest.php" />
   </exec>
  </target>
 
