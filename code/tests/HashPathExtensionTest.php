@@ -5,6 +5,9 @@ if (!defined('HASH_PATH_RELATIVE_PATH')) {
 }
 
 
+require_once(dirname(__FILE__) . '../HashPathExtension.php');
+
+
 class HashPathExtensionTest extends PHPUnit_Framework_TestCase
 {
 
