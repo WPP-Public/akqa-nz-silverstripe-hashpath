@@ -1,6 +1,6 @@
 <?php
 
-class HashPathExtensionTest extends SapphireTest
+class HashPathExtensionTest extends PHPUnit_Framework_TestCase
 {
 
     public function testHashFile()
@@ -11,7 +11,7 @@ class HashPathExtensionTest extends SapphireTest
         $this->assertEquals(
             '2f7d9c3e0cfd47e8fcab0c12447b2bf0',
             $hashPath->HashFile(
-                BASE_PATH . '/' . HASH_PATH_RELATIVE_PATH . '/code/tests/test.txt',
+                __DIR__ . '/test.txt',
                 false
             )
         );
@@ -19,7 +19,7 @@ class HashPathExtensionTest extends SapphireTest
         $this->assertEquals(
             '',
             $hashPath->HashFile(
-                'test.txt',
+                'fakefile',
                 false
             )
         );
@@ -32,9 +32,9 @@ class HashPathExtensionTest extends SapphireTest
         $hashPath = new HashPathExtension();
 
         $this->assertEquals(
-            '/' . HASH_PATH_RELATIVE_PATH . '/code/tests/test.v2f7d9c3e0cfd47e8fcab0c12447b2bf0.txt',
+            '/tests/test.v2f7d9c3e0cfd47e8fcab0c12447b2bf0.txt',
             $hashPath->HashPath(
-                '/' . HASH_PATH_RELATIVE_PATH . '/code/tests/test.txt',
+                '/tests/test.txt',
                 false
             )
         );
@@ -42,9 +42,9 @@ class HashPathExtensionTest extends SapphireTest
         $hashPath->setFormat('%s/%s.v.%s.%s');
 
         $this->assertEquals(
-            '/' . HASH_PATH_RELATIVE_PATH . '/code/tests/test.v.2f7d9c3e0cfd47e8fcab0c12447b2bf0.txt',
+            '/tests/test.v.2f7d9c3e0cfd47e8fcab0c12447b2bf0.txt',
             $hashPath->HashPath(
-                '/' . HASH_PATH_RELATIVE_PATH . '/code/tests/test.txt',
+                '/tests/test.txt',
                 false
             )
         );
