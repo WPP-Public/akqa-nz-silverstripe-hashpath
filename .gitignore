@@ -1,4 +1,2 @@
 vendor
 framework
-build
-!build/phpmd.xml
