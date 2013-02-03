@@ -1,5 +1,7 @@
 <?php
 
-define('HASH_PATH_RELATIVE_PATH', basename(dirname(__FILE__)));
+if (file_exists(__DIR__ . '../vendor/autoload.php')) {
+    require_once __DIR__ . '../vendor/autoload.php';
+}
 
 Object::add_extension('ContentController', 'HashPathExtension');
