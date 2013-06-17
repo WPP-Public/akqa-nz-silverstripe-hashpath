@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Class HashPathExtension
+ */
 class HashPathExtension extends Extension
 {
     /**
@@ -22,7 +25,7 @@ class HashPathExtension extends Extension
     }
     /**
      * Output links as relative
-     * @param boolen $val Whether or not to output links as relative
+     * @param boolean $val Whether or not to output links as relative
      */
     public static function setRelativeLinks($val = true)
     {
