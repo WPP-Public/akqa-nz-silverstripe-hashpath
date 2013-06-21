@@ -73,7 +73,7 @@ class HashPathExtension extends Extension
     protected function getPath($path, $theme = true)
     {
         return BASE_PATH . (
-            $theme ? '/themes/' . SSViewer::current_theme() . "/$path" : $path
+            $theme ? '/themes/' . Config::inst()->get('SSViewer', 'theme') . "/$path" : $path
         );
     }
 

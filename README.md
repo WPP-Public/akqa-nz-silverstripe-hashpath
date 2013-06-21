@@ -2,6 +2,8 @@
 
 Hash path provides a function in SilverStripe templates which given a path to an asset returns a path including a hash of the asset, enabling you in combination with some .htaccess to easily mitigate issues with browser caching.
 
+For a SilverStripe `2.4` compatible version see branch `1.1`.
+
 ##License
 
 Hash Path is licensed under an [MIT license](http://heyday.mit-license.org/)
