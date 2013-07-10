@@ -25,7 +25,12 @@ class HashPathExtension extends Extension
     {
         $path = $theme ? $this->getPath($path) : $path;
 
-        return file_exists($path) ? md5_file($path) : '';
+        if (file_exists($path)) {
+            $hash = md5_file($path);
+            return preg_replace('/=+$/', '', base64_encode(pack('H*', $hash)));
+        }
+        
+        return '';
     }
     /**
      * Template function to return new web path to asset which includes
