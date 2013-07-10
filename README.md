@@ -38,7 +38,7 @@ The following is required in your root `.htaccess` file.
 
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.+)\.(v[A-Za-z0-9\+]+)\.(js|css|png|jpg|gif)$ $1.$3 [L]
+    RewriteRule ^(.+)\.(v[A-Za-z0-9]+)\.(js|css|png|jpg|gif)$ $1.$3 [L]
 </IfModule>
 ```
 
