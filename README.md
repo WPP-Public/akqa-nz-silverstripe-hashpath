@@ -1,6 +1,14 @@
 #Heyday Hash Path
 
-Hash path provides a function in SilverStripe templates which given a path to an asset returns a path including a hash of the asset, enabling you in combination with some .htaccess to easily mitigate issues with browser caching.
+Hash Path provides a function in SilverStripe templates which, given a path to an asset, returns a modified path with a file hash appended. In combination with a web server rewrite rule, browser caching can be completely mitigated as the file URL sent to the browser changes whenever the file does.
+
+```php
+// Template:
+$HashPath(css/style.css)
+
+// Rendered:                          ↙ File hash
+/themes/my-theme/css/style.vpOQ8F6ybteKQQYND5dzZQ.css
+```
 
 For a SilverStripe `2.4` compatible version see branch `1.1`.
 
@@ -26,9 +34,13 @@ Create or edit a `composer.json` file in the root of your SilverStripe project, 
 
 After completing this step, navigate in Terminal or similar to the SilverStripe root directory and run `composer install` or `composer update` depending on whether or not you have composer already in use.
 
-###.htaccess
+### Web server config
 
-The following is required in your root `.htaccess` file.
+As Hash Path returns paths that don't exist on disk, a rewrite rule needs to be added to your web server in order to return the file that was originally given to Hash Path. The URL format is `.v[hash]` inserted before the file extension, so you end up with `.v[hash].[extension]`.
+
+#### Apache
+
+The following is required in your `.htaccess` file or virtual host config.
 
 ```
 <IfModule mod_rewrite.c>
@@ -42,7 +54,15 @@ The following is required in your root `.htaccess` file.
 </IfModule>
 ```
 
-Please note that if you change the format of the path that `hash path` outputs, you will need to change the `RewriteRule`. 
+#### Nginx
+
+```
+# Hashpath module
+location /themes {
+	rewrite "^(.+)\.(?:v\w{10,32})\.(js|css|png|jpg|gif)$" $1.$2 last;
+	try_files $uri =404;
+}
+```
 
 ##How to use
 
