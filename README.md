@@ -1,4 +1,4 @@
-#Heyday Hash Path
+#Hash Path
 
 Hash Path provides a function in SilverStripe templates which, given a path to an asset, returns a modified path with a file hash appended. In combination with a web server rewrite rule, browser caching can be completely mitigated as the file URL sent to the browser changes whenever the file does.
 
@@ -44,7 +44,6 @@ The following is required in your `.htaccess` file or virtual host config.
 
 ```
 <IfModule mod_rewrite.c>
-    SetEnv HTTP_MOD_REWRITE On
     RewriteEngine On
     RewriteBase /
 
@@ -70,15 +69,21 @@ Provided the correct theme is set, you can simply call `$HashPath` with the asse
 
 For example, for a file located at `themes/my-theme/js/general.js` and with `my-theme` current, using:
 
-    <script src="$HashPath(js/general.js)"></script>
+```html
+<script src="$HashPath(js/general.js)"></script>
+```
 
 will result in:
 
-    <script src="/themes/my-theme/js/general.v54473acf909c645bb14f011d86a47733.js"></script>
+```html
+<script src="/themes/my-theme/js/general.v54473acf909c645bb14f011d86a47733.js"></script>
+```
 
 If you are wanting to use an asset that is not relative to the current theme, use:
 
-    <script src="$HashPath(/my-module/js/general.js, 0)"></script>
+```html
+<script src="$HashPath(/my-module/js/general.js, 0)"></script>
+```
 
 ##Unit Testing
 
