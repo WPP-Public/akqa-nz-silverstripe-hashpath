@@ -20,14 +20,10 @@
         "source": "https://github.com/heyday/silverstripe-hashpath"
     },
     "require": {
-        "composer/installers": "1.0.0"
+        "composer/installers": "~1.0"
     },
     "require-dev": {
-        "silverstripe/framework": "2.4.9",
-        "composer/composer": "1.0.0-alpha6",
-        "phpmd/phpmd": "1.4.*",
-        "phploc/phploc": "dev-master",
-        "pdepend/pdepend": "1.1.*"
-    },
-    "minimum-stability": "dev"
+        "silverstripe/framework": "~2.4.9",
+        "composer/composer": "~1.0.0-alpha6"
+    }
 }
