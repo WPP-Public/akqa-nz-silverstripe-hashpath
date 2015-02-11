@@ -9,7 +9,7 @@ class HashPathExtensionTest extends PHPUnit_Framework_TestCase
         $hashPath = new HashPathExtension();
 
         $this->assertEquals(
-            '2f7d9c3e0cfd47e8fcab0c12447b2bf0',
+            'L32cPgz9Rj8qwwSRHsr8A',
             $hashPath->HashFile(
                 __DIR__ . '/test.txt',
                 false
@@ -32,7 +32,7 @@ class HashPathExtensionTest extends PHPUnit_Framework_TestCase
         $hashPath = new HashPathExtension();
 
         $this->assertEquals(
-            '/tests/test.v2f7d9c3e0cfd47e8fcab0c12447b2bf0.txt',
+            '/tests/test.vL32cPgz9Rj8qwwSRHsr8A.txt',
             $hashPath->HashPath(
                 '/tests/test.txt',
                 false
@@ -42,7 +42,7 @@ class HashPathExtensionTest extends PHPUnit_Framework_TestCase
         $hashPath->setFormat('%s/%s.v.%s.%s');
 
         $this->assertEquals(
-            '/tests/test.v.2f7d9c3e0cfd47e8fcab0c12447b2bf0.txt',
+            '/tests/test.v.L32cPgz9Rj8qwwSRHsr8A.txt',
             $hashPath->HashPath(
                 '/tests/test.txt',
                 false
