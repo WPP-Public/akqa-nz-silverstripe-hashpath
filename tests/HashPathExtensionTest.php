@@ -2,15 +2,11 @@
 
 class HashPathExtensionTest extends PHPUnit_Framework_TestCase
 {
-
     public function testHashFile()
     {
-
-        $hashPath = new HashPathExtension();
-
         $this->assertEquals(
             'L32cPgz9Rj8qwwSRHsr8A',
-            $hashPath->HashFile(
+            HashPath::generateHashForFile(
                 __DIR__ . '/test.txt',
                 false
             )
@@ -18,37 +14,38 @@ class HashPathExtensionTest extends PHPUnit_Framework_TestCase
         
         $this->assertEquals(
             '',
-            $hashPath->HashFile(
+            HashPath::generateHashForFile(
                 'fakefile',
                 false
             )
         );
-
     }
 
     public function testHashPath()
     {
-
-        $hashPath = new HashPathExtension();
-
         $this->assertEquals(
             '/tests/test.vL32cPgz9Rj8qwwSRHsr8A.txt',
-            $hashPath->HashPath(
+            HashPath::generateHashForPath(
                 '/tests/test.txt',
                 false
             )
         );
 
-        $hashPath->setFormat('%s/%s.v.%s.%s');
+        HashPath::setFormat('%s/%s.v.%s.%s');
 
         $this->assertEquals(
             '/tests/test.v.L32cPgz9Rj8qwwSRHsr8A.txt',
-            $hashPath->HashPath(
+            HashPath::generateHashForPath(
                 '/tests/test.txt',
                 false
             )
         );
-
     }
-
+    
+    public function testGlobalTemplateConfiguration()
+    {
+        $globalTemplateVars = HashPath::get_template_global_variables();
+        $this->assertEquals('generateHashForFile', $globalTemplateVars['HashFile']);
+        $this->assertEquals('generateHashForPath', $globalTemplateVars['HashPath']);
+    }
 }
