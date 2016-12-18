@@ -27,7 +27,7 @@ Create or edit a `composer.json` file in the root of your SilverStripe project, 
 ```json
 {
     "require": {
-        "heyday/silverstripe-hashpath": "1.1.*"
+        "heyday/silverstripe-hashpath": "^2.0.0"
     }
 }
 ```
