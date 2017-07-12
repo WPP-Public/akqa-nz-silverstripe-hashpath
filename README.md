@@ -1,4 +1,4 @@
-#Hash Path
+# Hash Path
 
 Hash Path provides a function in SilverStripe templates which, given a path to an asset, returns a modified path with a file hash appended. In combination with a web server rewrite rule, browser caching can be completely mitigated as the file URL sent to the browser changes whenever the file does.
 
@@ -12,13 +12,13 @@ $HashPath(css/style.css)
 
 For a SilverStripe `2.4` compatible version see branch `1.1`.
 
-##License
+## License
 
 Hash Path is licensed under an [MIT license](http://heyday.mit-license.org/)
 
-##Installation
+## Installation
 
-###Composer
+### Composer
 
 Installing from composer is easy, 
 
@@ -63,7 +63,7 @@ location /themes {
 }
 ```
 
-##How to use
+## How to use
 
 Provided the correct theme is set, you can simply call `$HashPath` with the asset location relative to the current theme as the first argument.
 
@@ -85,11 +85,11 @@ If you are wanting to use an asset that is not relative to the current theme, us
 <script src="$HashPath(/my-module/js/general.js, 0)"></script>
 ```
 
-##Unit Testing
+## Unit Testing
 
 If you have `phpunit` installed you can run `silverstripe-hashpath`'s unit tests to see if everything is functioning correctly.
 
-###Running the unit tests
+### Running the unit tests
 
 From the command line:
     
@@ -101,9 +101,9 @@ From your browser:
     http://localhost/dev/tests/module/silverstripe-hashpath
 
 
-##Contributing
+## Contributing
 
-###Code guidelines
+### Code guidelines
 
 This project follows the standards defined in:
 
