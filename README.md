@@ -10,6 +10,9 @@ $HashPath(css/style.css)
 /themes/my-theme/css/style.vpOQ8F6ybteKQQYND5dzZQ.css
 ```
 
+
+The latest version is only compatible with SilverStripe `4`.
+
 For a SilverStripe `3` compatible version see branch `2.1`.
 
 For a SilverStripe `2.4` compatible version see branch `1.1`.
