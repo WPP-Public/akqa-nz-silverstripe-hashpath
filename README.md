@@ -11,6 +11,7 @@ $HashPath(css/style.css)
 ```
 
 For a SilverStripe `2.4` compatible version see branch `1.1`.
+For a SilverStripe `3` compatible version see branch `2.1`.
 
 ## License
 
