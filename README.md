@@ -33,7 +33,7 @@ Create or edit a `composer.json` file in the root of your SilverStripe project, 
 ```json
 {
     "require": {
-        "heyday/silverstripe-hashpath": "^2.0.0"
+        "heyday/silverstripe-hashpath": "^3.0.0"
     }
 }
 ```
@@ -103,12 +103,11 @@ From the command line:
 
 
 
-
 ## Contributing
 
 ### Code guidelines
 
 This project follows the standards defined in:
 
-* [PSR-1](https://github.com/pmjones/fig-standards/blob/psr-1-style-guide/proposed/PSR-1-basic.md)
-* [PSR-2](https://github.com/pmjones/fig-standards/blob/psr-1-style-guide/proposed/PSR-2-advanced.md)
+* [PSR-1](http://www.php-fig.org/psr/psr-1/)
+* [PSR-2](http://www.php-fig.org/psr/psr-1/)
