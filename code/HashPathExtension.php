@@ -1,7 +1,8 @@
 <?php
 namespace Heyday\HashPath;
-use \SilverStripe\Core\Config\Config;
+use SilverStripe\Core\Config\Config;
 use SilverStripe\Core\Extension;
+use SilverStripe\View\SSViewer;
 
 /**
  * Class HashPathExtension
@@ -80,8 +81,14 @@ class HashPathExtension extends Extension
      */
     protected function getPath($path, $theme = true)
     {
+        $themes = SSViewer::get_themes();
+        if (is_array($themes)) {
+            $themePath = $themes[0];
+        } else {
+            $themePath = 'simple';
+        }
         return BASE_PATH . (
-            $theme ? '/themes/' . Config::inst()->get('SSViewer', 'theme') . "/$path" : $path
+            $theme ? '/themes/' . $themePath . "/$path" : $path
         );
     }
 

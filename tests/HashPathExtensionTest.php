@@ -1,8 +1,15 @@
 <?php
+use Heyday\HashPath\HashPathExtension;
 
+/**
+ * Class HashPathExtensionTest
+ */
 class HashPathExtensionTest extends PHPUnit_Framework_TestCase
 {
 
+    /**
+     *
+     */
     public function testHashFile()
     {
 
@@ -26,6 +33,9 @@ class HashPathExtensionTest extends PHPUnit_Framework_TestCase
 
     }
 
+    /**
+     *
+     */
     public function testHashPath()
     {
 

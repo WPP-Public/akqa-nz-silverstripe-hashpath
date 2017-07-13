@@ -71,7 +71,7 @@ Provided the correct theme is set, you can simply call `$HashPath` with the asse
 For example, for a file located at `themes/my-theme/js/general.js` and with `my-theme` current, using:
 
 ```html
-<script src="$HashPath(js/general.js)"></script>
+<script src="$HashPath("js/general.js")"></script>
 ```
 
 will result in:
@@ -83,23 +83,20 @@ will result in:
 If you are wanting to use an asset that is not relative to the current theme, use:
 
 ```html
-<script src="$HashPath(/my-module/js/general.js, 0)"></script>
+<script src="$HashPath("/my-module/js/general.js", 0)"></script>
 ```
 
 ## Unit Testing
 
-If you have `phpunit` installed you can run `silverstripe-hashpath`'s unit tests to see if everything is functioning correctly.
+PHP Unit now comes with SS
 
 ### Running the unit tests
 
 From the command line:
     
-    ./sake dev/tests/module/silverstripe-hashpath
+    vendor/bin/phpunit silverstripe-hashpath/tests
 
 
-From your browser:
-
-    http://localhost/dev/tests/module/silverstripe-hashpath
 
 
 ## Contributing
