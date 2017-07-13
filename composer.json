@@ -13,17 +13,27 @@
             "name": "Pieter Vanderwerff",
             "email": "pieter@heyday.co.nz",
             "role": "Developer"
+        },
+        {
+            "name": "Ben Dubuisson",
+            "email": "ben.dubuisson@heyday.co.nz",
+            "role": "Developer"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "Heyday\\HashPath\\": "code/"
+        }
+    },
     "support": {
         "issues": "https://github.com/heyday/silverstripe-hashpath/issues",
         "source": "https://github.com/heyday/silverstripe-hashpath"
     },
     "require": {
-        "composer/installers": "~1.0"
+        "composer/installers": "~1.0",
+        "silverstripe/framework": "~4.0"
     },
     "require-dev": {
-        "silverstripe/framework": "~3.0",
         "composer/composer": "~1.0.0-alpha9"
     }
 }

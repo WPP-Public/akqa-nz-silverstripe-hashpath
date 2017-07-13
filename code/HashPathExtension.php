@@ -1,4 +1,7 @@
 <?php
+namespace Heyday\HashPath;
+use \SilverStripe\Core\Config\Config;
+use SilverStripe\Core\Extension;
 
 /**
  * Class HashPathExtension
