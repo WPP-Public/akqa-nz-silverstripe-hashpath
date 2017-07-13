@@ -42,9 +42,9 @@ class HashPathExtensionTest extends PHPUnit_Framework_TestCase
         $hashPath = new HashPathExtension();
 
         $this->assertEquals(
-            '/tests/test.vL32cPgz9Rj8qwwSRHsr8A.txt',
+            '/silverstripe-hashpath/tests/test.vL32cPgz9Rj8qwwSRHsr8A.txt',
             $hashPath->HashPath(
-                '/tests/test.txt',
+                '/silverstripe-hashpath/tests/test.txt',
                 false
             )
         );
@@ -52,9 +52,9 @@ class HashPathExtensionTest extends PHPUnit_Framework_TestCase
         $hashPath->setFormat('%s/%s.v.%s.%s');
 
         $this->assertEquals(
-            '/tests/test.v.L32cPgz9Rj8qwwSRHsr8A.txt',
+            '/silverstripe-hashpath/tests/test.v.L32cPgz9Rj8qwwSRHsr8A.txt',
             $hashPath->HashPath(
-                '/tests/test.txt',
+                '/silverstripe-hashpath/tests/test.txt',
                 false
             )
         );
