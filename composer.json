@@ -35,5 +35,7 @@
     },
     "require-dev": {
         "composer/composer": "~1.0.0-alpha9"
-    }
+    },
+   	"prefer-stable": true,
+	"minimum-stability": "dev"
 }
