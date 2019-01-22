@@ -5,5 +5,5 @@ if (file_exists(__DIR__ . '../vendor/autoload.php')) {
 }
 
 if (class_exists('ContentController')) {
-    Object::add_extension('ContentController', 'HashPathExtension');
+    SS_Object::add_extension('ContentController', 'HashPathExtension');
 }
