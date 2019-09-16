@@ -1,6 +1,6 @@
 {
     "name": "heyday/silverstripe-hashpath",
-    "type": "silverstripe-module",
+    "type": "silverstripe-vendormodule",
     "description": "Hash path provides a function in SilverStripe templates which given a path to an asset returns a path including a hash of the asset",
     "license": "MIT",
     "authors": [
