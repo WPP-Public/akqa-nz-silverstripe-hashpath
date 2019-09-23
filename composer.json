@@ -23,7 +23,8 @@
         "composer/installers": "~1.0"
     },
     "require-dev": {
-        "silverstripe/framework": "~3.0",
+        "silverstripe/framework": "3.7",
+        "php":  ">=7.2",
         "composer/composer": "~1.0.0-alpha9"
     }
 }
