@@ -1,41 +1,20 @@
 {
-    "name": "heyday/silverstripe-hashpath",
-    "type": "silverstripe-vendormodule",
-    "description": "Hash path provides a function in SilverStripe templates which given a path to an asset returns a path including a hash of the asset",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Cam Spiers",
-            "email": "cameron@heyday.co.nz",
-            "role": "Developer"
-        },
-        {
-            "name": "Pieter Vanderwerff",
-            "email": "pieter@heyday.co.nz",
-            "role": "Developer"
-        },
-        {
-            "name": "Ben Dubuisson",
-            "email": "ben.dubuisson@heyday.co.nz",
-            "role": "Developer"
-        }
-    ],
-    "autoload": {
-        "psr-4": {
-            "Heyday\\HashPath\\": "code/"
-        }
-    },
-    "support": {
-        "issues": "https://github.com/heyday/silverstripe-hashpath/issues",
-        "source": "https://github.com/heyday/silverstripe-hashpath"
-    },
-    "require": {
-        "composer/installers": "~1.0",
-        "silverstripe/framework": "~4.0"
-    },
-    "require-dev": {
-        "composer/composer": "~1.0.0-alpha9"
-    },
-   	"prefer-stable": true,
-	"minimum-stability": "dev"
+  "name": "heyday/silverstripe-hashpath",
+  "type": "silverstripe-vendormodule",
+  "description": "Hash path provides a function in SilverStripe templates which given a path to an asset returns a path including a hash of the asset",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Heyday\\HashPath\\": "src/"
+    }
+  },
+  "support": {
+    "issues": "https://github.com/heyday/silverstripe-hashpath/issues",
+    "source": "https://github.com/heyday/silverstripe-hashpath"
+  },
+  "require": {
+    "silverstripe/framework": "^4 || ^5"
+  },
+  "prefer-stable": true,
+  "minimum-stability": "dev"
 }
