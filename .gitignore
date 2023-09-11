@@ -1,3 +1,4 @@
 /vendor
-/framework
-/build
+/composer.lock
+/public
+.phpunit.result.cache

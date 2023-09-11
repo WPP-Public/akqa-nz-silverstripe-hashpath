@@ -1,62 +1,58 @@
 <?php
 
+namespace Heyday\HashPath\Tests;
+
 use Heyday\HashPath\HashPathExtension;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Class HashPathExtensionTest
  */
-class HashPathExtensionTest extends PHPUnit_Framework_TestCase
+class HashPathExtensionTest extends TestCase
 {
+    public function testHashFile()
+    {
 
-	/**
-	 *
-	 */
-	public function testHashFile()
-	{
+        $hashPath = new HashPathExtension();
 
-		$hashPath = new HashPathExtension();
+        $this->assertEquals(
+            'L32cPgz9Rj8qwwSRHsr8A',
+            $hashPath->HashFile(
+                __DIR__ . '/test.txt',
+                false
+            )
+        );
 
-		$this->assertEquals(
-			'L32cPgz9Rj8qwwSRHsr8A',
-			$hashPath->HashFile(
-				__DIR__ . '/test.txt',
-				false
-			)
-		);
+        $this->assertEquals(
+            '',
+            $hashPath->HashFile(
+                'fakefile',
+                false
+            )
+        );
+    }
 
-		$this->assertEquals(
-			'',
-			$hashPath->HashFile(
-				'fakefile',
-				false
-			)
-		);
-	}
 
-	/**
-	 *
-	 */
-	public function testHashPath()
-	{
+    public function testHashPath()
+    {
+        $hashPath = new HashPathExtension();
 
-		$hashPath = new HashPathExtension();
+        $this->assertStringContainsString(
+            'tests/test.vL32cPgz9Rj8qwwSRHsr8A.txt',
+            $hashPath->HashPath(
+                __DIR__ . '/test.txt',
+                false
+            )
+        );
 
-		$this->assertEquals(
-			'/silverstripe-hashpath/tests/test.vL32cPgz9Rj8qwwSRHsr8A.txt',
-			$hashPath->HashPath(
-				'/silverstripe-hashpath/tests/test.txt',
-				false
-			)
-		);
+        $hashPath->setFormat('%s/%s.v.%s.%s');
 
-		$hashPath->setFormat('%s/%s.v.%s.%s');
-
-		$this->assertEquals(
-			'/silverstripe-hashpath/tests/test.v.L32cPgz9Rj8qwwSRHsr8A.txt',
-			$hashPath->HashPath(
-				'/silverstripe-hashpath/tests/test.txt',
-				false
-			)
-		);
-	}
+        $this->assertStringContainsString(
+            'tests/test.v.L32cPgz9Rj8qwwSRHsr8A.txt',
+            $hashPath->HashPath(
+                __DIR__ . '/test.txt',
+                false
+            )
+        );
+    }
 }
