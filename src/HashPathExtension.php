@@ -4,17 +4,19 @@ namespace Heyday\HashPath;
 
 use SilverStripe\Core\Extension;
 use SilverStripe\View\SSViewer;
+use SilverStripe\View\TemplateGlobalProvider;
 
 /**
  * Class HashPathExtension
  */
-class HashPathExtension extends Extension
+class HashPathExtension extends Extension implements TemplateGlobalProvider
 {
     /**
      * The format of the web path
      * @var string
      */
     protected static $format = '%s/%s.v%s.%s';
+
     /**
      * Whether or not to output links as relative
      * @var boolean
@@ -102,5 +104,28 @@ class HashPathExtension extends Extension
         }
 
         return BASE_PATH . $path;
+    }
+
+
+    public static function generateHashFile($path, $theme = true)
+    {
+        $hashPath = new HashPathExtension();
+        return $hashPath->HashFile($path, $theme);
+    }
+
+
+    public static function generateHashPath($path, $theme = true)
+    {
+        $hashPath = new HashPathExtension();
+        return $hashPath->HashPath($path, $theme);
+    }
+
+
+    public static function get_template_global_variables()
+    {
+        return [
+            'HashFile' => 'generateHashFile',
+            'HashPath' => 'generateHashPath'
+        ];
     }
 }
